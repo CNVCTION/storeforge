@@ -47,6 +47,8 @@ STOREFORGE_ROOT=/absolute/path/to/storeforge pnpm mcp:start
 
 See [`docs/mcp-server.md`](docs/mcp-server.md) for client configuration and the list of tools. The MCP server is draft-only: it does not publish stores, activate payments, or invent prices, inventory, tax, or shipping settings.
 
+For agent-oriented usage, start with [`AGENTS.md`](AGENTS.md) and [`docs/agent-guide.md`](docs/agent-guide.md). The repository includes a portable prompt template, an MCP client configuration example, and `scripts/agent-bootstrap-store.sh` for preparing a design-image workspace.
+
 ## Quick start for the scaffold
 
 ```bash

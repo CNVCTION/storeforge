@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "storeforge": {
+      "command": "pnpm",
+      "args": ["--filter", "@storeforge/mcp-server", "start"],
+      "cwd": "/absolute/path/to/storeforge",
+      "env": {
+        "STOREFORGE_ROOT": "/absolute/path/to/storeforge"
+      }
+    }
+  }
+}
