@@ -7,7 +7,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./adapters/medusa": "./dist/adapters/medusa.js",
-    "./adapters/supabase": "./dist/adapters/supabase.js"
+    "./adapters/supabase": "./dist/adapters/supabase.js",
+    "./adapters/stripe": "./dist/adapters/stripe.js",
+    "./adapters/paypal": "./dist/adapters/paypal.js"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json"

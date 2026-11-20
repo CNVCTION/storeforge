@@ -6,7 +6,7 @@
     "database": {"provider": "supabase", "enabled": true},
     "storage": {"provider": "supabase-storage", "enabled": true, "bucket": "store-assets"},
     "auth": {"provider": "supabase-auth", "enabled": true},
-    "payments": {"provider": "stripe-checkout", "enabled": false},
+    "payments": {"provider": "stripe", "availableProviders": ["stripe", "paypal"], "enabled": true, "liveEnabled": false},
     "tax": {"provider": "stripe-tax", "enabled": false},
     "shipping": {"provider": "shippo", "enabled": false},
     "email": {"provider": "resend", "enabled": false},

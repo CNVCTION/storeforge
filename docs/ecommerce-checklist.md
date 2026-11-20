@@ -30,8 +30,8 @@ This is the minimum checklist for a credible online store. Each item is marked b
 - [ ] Shipping method selection and rates — shipping API slot.
 - [ ] Tax calculation and tax-inclusive/exclusive display — tax API slot.
 - [ ] Discount codes, gift cards, and store credit — commerce backend slot.
-- [ ] Payment method collection, authorization, capture, and failure handling — Stripe or commerce backend slot.
-- [ ] Idempotency and duplicate-submit protection — must be implemented in checkout service.
+- [x] Hosted payment checkout, authorization, capture, and refunds — Stripe Checkout and PayPal Orders adapters are implemented; credentials and provider setup are still required.
+- [x] Gateway request idempotency — Stripe and PayPal adapter methods accept stable idempotency keys; checkout service persistence and retry policy remain required.
 - [ ] Checkout confirmation and receipt — payment/email integration slot.
 
 ## 4. Orders and operations
@@ -42,7 +42,7 @@ This is the minimum checklist for a credible online store. Each item is marked b
 - [ ] Fulfillment, shipment tracking, and partial fulfillment — fulfillment/shipping API slot.
 - [ ] Cancellations, refunds, exchanges, returns, and chargebacks — payment/commerce backend slot.
 - [ ] Admin order lookup and manual intervention — admin app not yet implemented.
-- [ ] Webhook ingestion, signature verification, retries, and replay protection — not yet implemented.
+- [x] Gateway webhook signature verification and event normalization — Stripe raw-body HMAC and PayPal official verification adapter methods are implemented; endpoint ingestion, durable deduplication, retries, and replay protection remain required.
 
 ## 5. Customer communication
 

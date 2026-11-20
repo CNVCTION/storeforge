@@ -4,7 +4,7 @@ StoreForge is a planned free, open-source, self-hostable commerce platform that 
 
 The core does not require Manus, OpenAI, Anthropic, Ollama, or any other AI provider. Models connect through normalized adapters, while the same workflows are available through a CLI, HTTP API, MCP server, or filesystem request files.
 
-> This repository is currently a scaffold and implementation plan. It does not yet provide production payments, tax calculation, fulfillment, or live checkout.
+> This repository is currently a scaffold and implementation plan. It includes provider adapters for hosted payments, but it does not yet provide production tax calculation, fulfillment, or a live activated checkout.
 
 ## Design principle
 
@@ -53,7 +53,7 @@ A complete synthetic input set is available in [`examples/design-manifest.json`]
 
 Deployment templates for a generated storefront are in [`templates/vercel/`](templates/vercel/) and [`templates/supabase/`](templates/supabase/). See [`docs/deployment.md`](docs/deployment.md) for the Vercel/Supabase setup and security boundaries.
 
-The full production-readiness checklist is in [`docs/ecommerce-checklist.md`](docs/ecommerce-checklist.md), with provider/API mappings in [`docs/integrations.md`](docs/integrations.md) and configuration templates under [`templates/integrations/`](templates/integrations/).
+The full production-readiness checklist is in [`docs/ecommerce-checklist.md`](docs/ecommerce-checklist.md), with provider/API mappings in [`docs/integrations.md`](docs/integrations.md), Stripe and PayPal setup in [`docs/payments.md`](docs/payments.md), and configuration templates under [`templates/integrations/`](templates/integrations/). Payment adapters are implemented, but live sales still require real merchant credentials, webhook deployment, tax/shipping configuration, order orchestration, and explicit activation.
 
 The active commerce backend selection is documented in [`docs/medusa-supabase.md`](docs/medusa-supabase.md): Medusa handles commerce API operations, while Supabase handles server-side draft persistence, storage, and optional auth.
 

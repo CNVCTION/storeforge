@@ -70,6 +70,21 @@ export interface TaxQuote {
   providerReference?: string;
 }
 
+export interface PaymentLineItem {
+  name: string;
+  amount: number;
+  currency: string;
+  quantity: number;
+}
+
+export interface PaymentCheckout {
+  id: string;
+  provider: "stripe" | "paypal";
+  url?: string;
+  status: "open" | "complete" | "expired";
+  providerReference?: string;
+}
+
 export interface WebhookEvent {
   id: string;
   type: string;
@@ -95,7 +110,10 @@ export interface TaxPort {
 }
 
 export interface PaymentPort {
-  refund(input: { orderId: OrderId; amount?: Money; reason?: string }, idempotencyKey: string): Promise<{ providerReference: string }>;
+  createCheckoutSession(input: { orderId: OrderId; amount: Money; lineItems: PaymentLineItem[]; successUrl: string; cancelUrl: string }, idempotencyKey: string): Promise<PaymentCheckout>;
+  capture(input: { paymentId: string }, idempotencyKey: string): Promise<{ providerReference: string; status: string }>;
+  refund(input: { paymentId: string; amount?: Money; reason?: string }, idempotencyKey: string): Promise<{ providerReference: string; status: string }>;
+  verifyWebhook(rawBody: string, signature: string): Promise<WebhookEvent>;
 }
 
 export interface EmailPort {

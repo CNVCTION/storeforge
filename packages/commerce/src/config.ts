@@ -9,6 +9,14 @@ export interface StoreForgeIntegrationConfig {
   supabaseAnonKey?: string;
   supabaseServiceRoleKey: string;
   supabaseStorageBucket: string;
+  paymentsProvider: "disabled" | "stripe" | "paypal";
+  paymentsLiveEnabled: boolean;
+  stripeSecretKey?: string;
+  stripeWebhookSecret?: string;
+  paypalClientId?: string;
+  paypalClientSecret?: string;
+  paypalWebhookId?: string;
+  paypalBaseUrl: string;
 }
 
 function required(name: string): string {
@@ -21,6 +29,10 @@ export function loadIntegrationConfig(env: NodeJS.ProcessEnv = process.env): Sto
   if ((env.COMMERCE_PROVIDER ?? "medusa") !== "medusa") {
     throw new Error("StoreForge is configured for the Medusa commerce adapter; change the adapter before selecting another provider");
   }
+  const paymentsProvider = env.PAYMENTS_PROVIDER ?? "disabled";
+  if (paymentsProvider !== "disabled" && paymentsProvider !== "stripe" && paymentsProvider !== "paypal") {
+    throw new Error("PAYMENTS_PROVIDER must be disabled, stripe, or paypal");
+  }
   return {
     commerceProvider: "medusa",
     medusaBaseUrl: (env.COMMERCE_BASE_URL ?? "http://localhost:9000").replace(/\/$/, ""),
@@ -31,7 +43,15 @@ export function loadIntegrationConfig(env: NodeJS.ProcessEnv = process.env): Sto
     supabaseUrl: requiredFrom(env, "SUPABASE_URL"),
     supabaseAnonKey: env.SUPABASE_ANON_KEY,
     supabaseServiceRoleKey: requiredFrom(env, "SUPABASE_SERVICE_ROLE_KEY"),
-    supabaseStorageBucket: env.SUPABASE_STORAGE_BUCKET ?? "store-assets"
+    supabaseStorageBucket: env.SUPABASE_STORAGE_BUCKET ?? "store-assets",
+    paymentsProvider,
+    paymentsLiveEnabled: env.PAYMENTS_LIVE_ENABLED === "true",
+    stripeSecretKey: env.STRIPE_SECRET_KEY,
+    stripeWebhookSecret: env.STRIPE_WEBHOOK_SECRET,
+    paypalClientId: env.PAYPAL_CLIENT_ID,
+    paypalClientSecret: env.PAYPAL_CLIENT_SECRET,
+    paypalWebhookId: env.PAYPAL_WEBHOOK_ID,
+    paypalBaseUrl: env.PAYPAL_BASE_URL ?? "https://api-m.sandbox.paypal.com"
   };
 }
 
