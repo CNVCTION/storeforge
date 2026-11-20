@@ -2,10 +2,10 @@
   "version": "1.0",
   "environment": "development",
   "providers": {
-    "commerce": {"provider": "medusa", "enabled": false, "baseUrl": "http://localhost:9000"},
+    "commerce": {"provider": "medusa", "enabled": true, "baseUrl": "http://localhost:9000", "publishableKeyEnv": "MEDUSA_PUBLISHABLE_KEY"},
     "database": {"provider": "supabase", "enabled": true},
     "storage": {"provider": "supabase-storage", "enabled": true, "bucket": "store-assets"},
-    "auth": {"provider": "supabase-auth", "enabled": false},
+    "auth": {"provider": "supabase-auth", "enabled": true},
     "payments": {"provider": "stripe-checkout", "enabled": false},
     "tax": {"provider": "stripe-tax", "enabled": false},
     "shipping": {"provider": "shippo", "enabled": false},

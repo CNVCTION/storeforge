@@ -55,6 +55,8 @@ Deployment templates for a generated storefront are in [`templates/vercel/`](tem
 
 The full production-readiness checklist is in [`docs/ecommerce-checklist.md`](docs/ecommerce-checklist.md), with provider/API mappings in [`docs/integrations.md`](docs/integrations.md) and configuration templates under [`templates/integrations/`](templates/integrations/).
 
+The active commerce backend selection is documented in [`docs/medusa-supabase.md`](docs/medusa-supabase.md): Medusa handles commerce API operations, while Supabase handles server-side draft persistence, storage, and optional auth.
+
 ## Quick start for the scaffold
 
 ```bash

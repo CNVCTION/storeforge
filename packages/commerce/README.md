@@ -4,4 +4,6 @@ This package is the boundary between StoreForge and a real commerce backend. Kee
 
 The first adapter should cover catalog lookup, cart creation, cart line updates, checkout session creation, order lookup, inventory reads, and webhook verification. Payment, tax, shipping, email, analytics, and monitoring remain separate capability ports so a generated store can use APIs without coupling the storefront to one vendor.
 
+The active default is `MedusaCommerceAdapter` for the Medusa v2 Store API and `SupabaseStoreRepository` for server-side draft catalog, store specification, and asset persistence. Configuration is loaded from the environment through `loadIntegrationConfig`; see `docs/medusa-supabase.md` for setup.
+
 Do not place secret-bearing provider clients in browser code. Do not store raw payment card data. Every payment and order mutation must accept an idempotency key and preserve the upstream event or request ID.
