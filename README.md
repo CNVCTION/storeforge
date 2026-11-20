@@ -49,6 +49,8 @@ See [`docs/mcp-server.md`](docs/mcp-server.md) for client configuration and the 
 
 For agent-oriented usage, start with [`AGENTS.md`](AGENTS.md) and [`docs/agent-guide.md`](docs/agent-guide.md). The repository includes a portable prompt template, an MCP client configuration example, and `scripts/agent-bootstrap-store.sh` for preparing a design-image workspace.
 
+A complete synthetic input set is available in [`examples/design-manifest.json`](examples/design-manifest.json), [`examples/demo-product-input.json`](examples/demo-product-input.json), and [`examples/assets/`](examples/assets/). The images are mock references for demonstrations only.
+
 ## Quick start for the scaffold
 
 ```bash

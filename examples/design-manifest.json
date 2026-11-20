@@ -1,24 +1,40 @@
 {
   "schemaVersion": "1.0",
-  "brief": "Create a dark editorial storefront for limited-run posters and apparel.",
+  "brief": "Create a dark editorial storefront for limited-run posters and apparel using the supplied synthetic demo references.",
+  "syntheticDemo": true,
   "assets": [
     {
-      "path": "examples/assets/logo.svg",
+      "path": "examples/assets/logo.png",
       "kind": "logo",
-      "purpose": "brand mark"
+      "purpose": "synthetic brand mark",
+      "synthetic": true
     },
     {
       "path": "examples/assets/moodboard.png",
       "kind": "moodboard",
-      "purpose": "visual direction"
+      "purpose": "synthetic visual direction",
+      "synthetic": true
     },
     {
       "path": "examples/assets/home-reference.png",
       "kind": "screenshot",
-      "purpose": "homepage composition reference"
+      "purpose": "synthetic homepage composition reference",
+      "synthetic": true
+    },
+    {
+      "path": "examples/assets/product-poster.png",
+      "kind": "product-image",
+      "purpose": "synthetic poster product reference",
+      "synthetic": true
+    },
+    {
+      "path": "examples/assets/product-shirt.png",
+      "kind": "product-image",
+      "purpose": "synthetic apparel product reference",
+      "synthetic": true
     }
   ],
-  "productData": null,
+  "productData": "examples/demo-product-input.json",
   "constraints": {
     "doNotInvent": [
       "prices",

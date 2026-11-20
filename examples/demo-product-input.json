@@ -1,0 +1,24 @@
+{
+  "syntheticDemo": true,
+  "currency": "USD",
+  "products": [
+    {
+      "id": "demo-poster-001",
+      "name": "Nightshift Geometry Poster",
+      "description": "Synthetic demo product data for a limited-run abstract poster.",
+      "price": 48,
+      "inventory": 24,
+      "images": ["examples/assets/product-poster.png"],
+      "collection": "Posters"
+    },
+    {
+      "id": "demo-shirt-001",
+      "name": "Nightshift Heavyweight Tee",
+      "description": "Synthetic demo product data for a heavyweight black cotton t-shirt.",
+      "price": 36,
+      "inventory": 40,
+      "images": ["examples/assets/product-shirt.png"],
+      "collection": "Apparel"
+    }
+  ]
+}

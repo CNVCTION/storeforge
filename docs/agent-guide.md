@@ -18,6 +18,8 @@ pnpm mcp:build
 
 Put design references in `store/assets/`. Put a manifest at `store/design-manifest.json`. If product data exists, put it at `store/product-input.json` using explicit prices and inventory rather than embedding those values in screenshots.
 
+For a complete synthetic demo, use [`examples/design-manifest.json`](../examples/design-manifest.json) with [`examples/demo-product-input.json`](../examples/demo-product-input.json). The manifest references a synthetic logo, moodboard, homepage reference, poster image, and shirt image under `examples/assets/`. These assets are intentionally mock references and must not be treated as real brand assets or inventory.
+
 The bootstrap script creates missing directories and copies the sample manifest and prompt into the store workspace. It does not overwrite existing files.
 
 ## MCP connection
