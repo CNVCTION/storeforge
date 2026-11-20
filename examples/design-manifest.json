@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "brief": "Create a dark editorial storefront for limited-run posters and apparel.",
+  "assets": [
+    {
+      "path": "examples/assets/logo.svg",
+      "kind": "logo",
+      "purpose": "brand mark"
+    },
+    {
+      "path": "examples/assets/moodboard.png",
+      "kind": "moodboard",
+      "purpose": "visual direction"
+    },
+    {
+      "path": "examples/assets/home-reference.png",
+      "kind": "screenshot",
+      "purpose": "homepage composition reference"
+    }
+  ],
+  "productData": null,
+  "constraints": {
+    "doNotInvent": [
+      "prices",
+      "inventory",
+      "shipping rates",
+      "tax rules",
+      "payment credentials",
+      "legal policies"
+    ]
+  }
+}

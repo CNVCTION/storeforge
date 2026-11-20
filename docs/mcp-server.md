@@ -47,3 +47,7 @@ The exact configuration key differs by client, but the equivalent process defini
 ```
 
 An MCP-capable LLM can then inspect the context, create a draft brand/store specification, add products, and run validation without knowing which model provider is being used.
+
+## Prompt workflow
+
+Use [`examples/prompts/generate-store-from-design.md`](../examples/prompts/generate-store-from-design.md) as a system or task prompt for an MCP-capable LLM. It defines the sequence of tools, the rules for interpreting design images, the fields that must remain unresolved, and the expected completion format. [`examples/design-manifest.json`](../examples/design-manifest.json) shows the input shape for a design asset set.
