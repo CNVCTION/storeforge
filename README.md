@@ -35,6 +35,18 @@ Content-Type: application/json
 
 An MCP server will expose the same operations as tools, but MCP is an adapter rather than a core dependency.
 
+## MCP server
+
+The repository includes a working stdio MCP server. Any MCP-compliant LLM can inspect the StoreForge plan, write draft store specifications and products, read project files, and run validation without using a particular model provider.
+
+```bash
+pnpm install
+pnpm mcp:build
+STOREFORGE_ROOT=/absolute/path/to/storeforge pnpm mcp:start
+```
+
+See [`docs/mcp-server.md`](docs/mcp-server.md) for client configuration and the list of tools. The MCP server is draft-only: it does not publish stores, activate payments, or invent prices, inventory, tax, or shipping settings.
+
 ## Quick start for the scaffold
 
 ```bash

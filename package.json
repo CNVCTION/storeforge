@@ -7,6 +7,9 @@
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "mcp:dev": "pnpm --filter @storeforge/mcp-server dev",
+    "mcp:build": "pnpm --filter @storeforge/mcp-server build",
+    "mcp:start": "pnpm --filter @storeforge/mcp-server start",
     "lint": "echo 'lint not configured yet'",
     "test": "echo 'tests not configured yet'"
   }
