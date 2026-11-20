@@ -1,0 +1,51 @@
+# StoreForge
+
+StoreForge is a planned free, open-source, self-hostable commerce platform that turns design references into a reviewable storefront. It is **LLM-agnostic by design**.
+
+The core does not require Manus, OpenAI, Anthropic, Ollama, or any other AI provider. Models connect through normalized adapters, while the same workflows are available through a CLI, HTTP API, MCP server, or filesystem request files.
+
+> This repository is currently a scaffold and implementation plan. It does not yet provide production payments, tax calculation, fulfillment, or live checkout.
+
+## Design principle
+
+An LLM should be able to operate StoreForge without learning a proprietary SDK:
+
+```text
+input assets + JSON request
+        -> provider-neutral operation
+        -> JSON artifact + validation results
+        -> human approval
+        -> storefront/runtime configuration
+```
+
+## Planned interfaces
+
+```bash
+storeforge analyze-design --input examples/design-request.json
+storeforge generate-store --input examples/store-request.json
+storeforge validate-store --input examples/store-spec.json
+```
+
+```http
+POST /v1/operations
+Content-Type: application/json
+
+{"type":"analyze_design","input":{...}}
+```
+
+An MCP server will expose the same operations as tools, but MCP is an adapter rather than a core dependency.
+
+## Quick start for the scaffold
+
+```bash
+cp .env.example .env
+corepack enable
+pnpm install
+pnpm typecheck
+```
+
+The mock model adapter is intended to make local development possible without an API key. See [`plan.md`](plan.md), [`docs/architecture.md`](docs/architecture.md), and [`examples/`](examples/).
+
+## License
+
+Apache-2.0 is the intended license for the repository. Confirm the final license before the first public release.

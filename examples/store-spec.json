@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "status": "draft",
+  "brand": {
+    "name": "Example Studio",
+    "palette": {"ink": "#111111", "paper": "#F4F0E8", "accent": "#D95D39"},
+    "fontDirection": "high-contrast editorial sans with restrained display serif",
+    "voice": "direct, tactile, and collector-focused"
+  },
+  "navigation": ["Shop", "Posters", "Apparel", "About"],
+  "homepage": [
+    {"type": "hero", "asset": "./assets/hero.jpg", "headline": "Limited objects for considered spaces"},
+    {"type": "collection_grid", "collection": "featured"}
+  ],
+  "approvalRequired": ["prices", "inventory", "shipping", "tax", "payments", "publish"]
+}

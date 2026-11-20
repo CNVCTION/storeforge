@@ -1,0 +1,15 @@
+{
+  "type": "analyze_design",
+  "schemaVersion": "1.0",
+  "input": {
+    "referenceAssets": [
+      {"uri": "./assets/moodboard.png", "kind": "image", "label": "visual direction"},
+      {"uri": "./assets/logo.svg", "kind": "logo", "label": "brand mark"}
+    ],
+    "brief": "Create a dark editorial storefront for limited-run posters and apparel.",
+    "constraints": {
+      "doNotInvent": ["prices", "inventory", "shipping rates", "tax rules"],
+      "audience": "design-conscious collectors"
+    }
+  }
+}
