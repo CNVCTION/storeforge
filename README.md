@@ -51,6 +51,8 @@ For agent-oriented usage, start with [`AGENTS.md`](AGENTS.md) and [`docs/agent-g
 
 A complete synthetic input set is available in [`examples/design-manifest.json`](examples/design-manifest.json), [`examples/demo-product-input.json`](examples/demo-product-input.json), and [`examples/assets/`](examples/assets/). The images are mock references for demonstrations only.
 
+Deployment templates for a generated storefront are in [`templates/vercel/`](templates/vercel/) and [`templates/supabase/`](templates/supabase/). See [`docs/deployment.md`](docs/deployment.md) for the Vercel/Supabase setup and security boundaries.
+
 ## Quick start for the scaffold
 
 ```bash

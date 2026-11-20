@@ -1,0 +1,22 @@
+# StoreForge Supabase template.
+# Copy this file to supabase/config.toml in a generated deployment.
+project_id = "storeforge-local"
+
+[api]
+enabled = true
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[storage]
+enabled = true
+
+[auth]
+enabled = true
+auto_confirm_email = false
