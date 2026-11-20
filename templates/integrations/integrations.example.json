@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "environment": "development",
+  "providers": {
+    "commerce": {"provider": "medusa", "enabled": false, "baseUrl": "http://localhost:9000"},
+    "database": {"provider": "supabase", "enabled": true},
+    "storage": {"provider": "supabase-storage", "enabled": true, "bucket": "store-assets"},
+    "auth": {"provider": "supabase-auth", "enabled": false},
+    "payments": {"provider": "stripe-checkout", "enabled": false},
+    "tax": {"provider": "stripe-tax", "enabled": false},
+    "shipping": {"provider": "shippo", "enabled": false},
+    "email": {"provider": "resend", "enabled": false},
+    "analytics": {"provider": "posthog", "enabled": false},
+    "monitoring": {"provider": "sentry", "enabled": false},
+    "search": {"provider": "meilisearch", "enabled": false},
+    "support": {"provider": "email", "enabled": false}
+  },
+  "approvalRequired": [
+    "prices",
+    "inventory",
+    "shipping",
+    "tax",
+    "payments",
+    "policies",
+    "publish"
+  ]
+}

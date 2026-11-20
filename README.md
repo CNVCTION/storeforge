@@ -53,6 +53,8 @@ A complete synthetic input set is available in [`examples/design-manifest.json`]
 
 Deployment templates for a generated storefront are in [`templates/vercel/`](templates/vercel/) and [`templates/supabase/`](templates/supabase/). See [`docs/deployment.md`](docs/deployment.md) for the Vercel/Supabase setup and security boundaries.
 
+The full production-readiness checklist is in [`docs/ecommerce-checklist.md`](docs/ecommerce-checklist.md), with provider/API mappings in [`docs/integrations.md`](docs/integrations.md) and configuration templates under [`templates/integrations/`](templates/integrations/).
+
 ## Quick start for the scaffold
 
 ```bash
